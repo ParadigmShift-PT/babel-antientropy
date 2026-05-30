@@ -6,7 +6,7 @@
 
     <groupId>pt.paradigmshift.babel</groupId>
     <artifactId>broadcast-antientropy</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
     <name>Babel Broadcast Anti-Entropy</name>
     <description>
         Anti-entropy reconciliation protocol for Babel applications. Periodically
@@ -48,8 +48,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
-        <babel.core.version>1.0.0</babel.core.version>
-        <babel.protocols.common.version>1.0.0</babel.protocols.common.version>
+        <babel.core.version>1.0.1</babel.core.version>
+        <babel.protocols.common.version>1.1.0</babel.protocols.common.version>
         <guava.version>33.1.0-jre</guava.version>
     </properties>
 
