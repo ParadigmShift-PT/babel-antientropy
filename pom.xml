@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>pt.paradigmshift.babel</groupId>
+    <artifactId>broadcast-antientropy</artifactId>
+    <version>0.1.0</version>
+    <name>Babel Broadcast Anti-Entropy</name>
+    <description>
+        Anti-entropy reconciliation protocol for Babel applications. Periodically
+        announces a Bloom-filter summary of the local message set to one random
+        neighbour; the neighbour issues recovery requests for messages it appears
+        to be missing. Pairs well with an eager-push gossip dissemination protocol
+        and a membership protocol such as HyParView, but is dissemination-agnostic.
+    </description>
+    <url>https://www.paradigmshift.pt</url>
+
+    <licenses>
+        <license>
+            <name>ParadigmShift Proprietary License</name>
+            <url>https://www.paradigmshift.pt</url>
+            <distribution>repo</distribution>
+            <comments>
+                Non-commercial use is permitted; commercial use requires a written
+                licence from ParadigmShift, Lda. See the LICENSE file for the full
+                terms.
+            </comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>João Leitão</name>
+            <email>joao.leitao@paradigmshift.pt</email>
+            <organization>ParadigmShift, Lda</organization>
+            <organizationUrl>https://www.paradigmshift.pt</organizationUrl>
+        </developer>
+        <developer>
+            <name>ParadigmShift</name>
+            <email>info@paradigmshift.pt</email>
+            <organization>ParadigmShift, Lda</organization>
+            <organizationUrl>https://www.paradigmshift.pt</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>17</maven.compiler.release>
+        <babel.core.version>1.0.0</babel.core.version>
+        <babel.protocols.common.version>1.0.0</babel.protocols.common.version>
+        <guava.version>33.1.0-jre</guava.version>
+    </properties>
+
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.12.1</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <source>17</source>
+                    <doclint>none</doclint>
+                    <quiet>true</quiet>
+                    <windowtitle>Babel Anti-Entropy</windowtitle>
+                    <doctitle>Babel Anti-Entropy ${project.version}</doctitle>
+                    <bottom>
+                        Copyright &amp;copy; 2026 ParadigmShift. All rights reserved.
+                        See LICENSE for terms of use.
+                    </bottom>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>paradigmshift-repository</id>
+            <url>https://maven.paradigmshift.pt/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>paradigmshift-repository</id>
+            <url>https://maven.paradigmshift.pt/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>paradigmshift-repository</id>
+            <name>ParadigmShift Repository</name>
+            <url>https://maven.paradigmshift.pt/releases</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>pt.paradigmshift.babel</groupId>
+            <artifactId>babel-core</artifactId>
+            <version>${babel.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>pt.paradigmshift.babel</groupId>
+            <artifactId>babel-protocols-common</artifactId>
+            <version>${babel.protocols.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

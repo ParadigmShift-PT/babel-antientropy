@@ -1,0 +1,9 @@
+<settings>
+    <servers>
+        <server>
+            <id>paradigmshift-repository</id>
+            <username>github-ci</username>
+            <password>${env.REPOSILITE_TOKEN}</password>
+        </server>
+    </servers>
+</settings>
