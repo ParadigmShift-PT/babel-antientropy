@@ -193,3 +193,6 @@ buildNumber.properties
 *.iml
 
 # End of https://www.gitignore.io/api/java,maven,eclipse,intellij
+
+# Claude Code per-project guidance (local, not committed)
+CLAUDE.md
